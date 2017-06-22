@@ -7,7 +7,8 @@ public class GrepAnalog {
 
     public static void main(String[] args) {
 
-
+        GrepFunction gf = new GrepFunction("src/textFile.txt", "Pine");
+        gf.grep();
 
     }
 
