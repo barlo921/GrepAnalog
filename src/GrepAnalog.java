@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Iterator;
 
 /**
@@ -7,7 +11,26 @@ public class GrepAnalog {
 
     public static void main(String[] args) {
 
-        GrepFunction gf = new GrepFunction("src/textFile.txt", "Pine");
+        InputStream is = System.in;
+        BufferedReader bf;
+
+        bf = new BufferedReader(new InputStreamReader(is));
+
+        String searchFor = "";
+
+        try {
+
+            System.out.println("Searching for ");
+            searchFor = bf.readLine();
+
+        } catch (IOException e) {
+
+            System.out.println(e + " exception occurred");
+
+        }
+
+
+        GrepFunction gf = new GrepFunction("src/textFile.txt", searchFor);
         gf.grep();
 
     }

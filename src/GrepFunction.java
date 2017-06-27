@@ -10,10 +10,14 @@ public class GrepFunction {
     private String fileName;
     private CharSequence searchFor;
 
-    public GrepFunction (String fileName, CharSequence searchFor){
+    public GrepFunction (String fileName, String searchFor){
 
         this.fileName = fileName;
-        this.searchFor = searchFor;
+
+        searchFor = searchFor.toLowerCase();
+
+
+        this.searchFor = searchFor.subSequence(0, searchFor.length());
 
     }
 
@@ -27,7 +31,7 @@ public class GrepFunction {
 
         while (it.hasNext()){
 
-            if ((tempData = it.next().toString()).contains(searchFor)) {
+            if (((tempData = it.next().toString()).toLowerCase().contains(searchFor))) {
 
                 System.out.println(tempData);
 
