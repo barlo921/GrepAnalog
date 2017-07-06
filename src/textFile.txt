@@ -1,5 +1,2 @@
-Melon
-Pineapple
-Apple
-Melon
-Strawberry
+There is a lot of line in this document. This function have to find all sentences contain specific expression. That's why this text file must have different kind of sentences in different lines.
+First program would read this file. Second split it by dots.

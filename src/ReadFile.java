@@ -34,9 +34,18 @@ public class ReadFile {
 
             reader = new BufferedReader(new FileReader(fileName));
 
+            String regex = "\\.";
+
             while ((tempLine = reader.readLine()) != null) {
 
-                data.add(tempLine);
+                String [] tempStrings = tempLine.split(regex);
+
+                for (int i=0; i<tempStrings.length; i++) {
+
+                    data.add(tempStrings[i]);
+
+                }
+
             }
 
 
